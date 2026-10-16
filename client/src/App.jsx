@@ -1,6 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-
+const DEFAULT_PROJECTS = [
+  {
+    id: 1,
+    title: 'Mystic Password Generator',
+    description: 'Cryptographically secure passphrase generator with real-time entropy and brute-force complexity estimation.',
+    category: 'Cybersecurity',
+    technologies: 'Python, Hashlib, Secrets',
+    github_url: 'https://github.com/MonishaaM/mystic-vault',
+    demo_url: ''
+  },
+  {
+    id: 2,
+    title: 'Communication Assessment Tool (CAT)',
+    description: 'Evaluation suite analyzing communication metrics, scoring audio/text fluency, and generating performance feedback.',
+    category: 'Python / Core',
+    technologies: 'Python, Speech/Text Processing, Git',
+    github_url: 'https://github.com/MonishaaM/communication-assessment-tool',
+    demo_url: ''
+  },
+  {
+    id: 3,
+    title: 'Inventory Management System',
+    description: 'Desktop business system handling product catalogs, real-time stock deductions, and transactional logging.',
+    category: 'Desktop Utility',
+    technologies: 'Python, Tkinter GUI, MySQL Database',
+    github_url: '',
+    demo_url: ''
+  },
+  {
+    id: 4,
+    title: 'Personal Developer Portfolio',
+    description: 'Interactive portfolio web application with dynamic MySQL REST API integration, neon gradient theme, and cyber spotlight.',
+    category: 'Web Application',
+    technologies: 'React.js, Node.js, Express, MySQL 9.0',
+    github_url: '',
+    demo_url: 'https://my-portfolio-eosin-xi-32.vercel.app'
+  }
+];
 const ROLES = [
   "Python & Database Architectures",
   "CTF Challenges & Security Tools",
@@ -33,7 +70,7 @@ const SIGNAL_DATA = [
 ];
 
 export default function App() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(DEFAULT_PROJECTS);
   const [filter, setFilter] = useState('All');
   const [activeSignal, setActiveSignal] = useState(0);
   const [apiLatency, setApiLatency] = useState(null);
